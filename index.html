@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>ChiChicken</title>
+	<link rel="shortcut icon" href="logo_mini.png">
+	<link rel="stylesheet" href="main_style.css">
+</head>
+<body>
+	<nav class="navka">
+		<a href="index.html"><img src="logotype.png"></a>
+
+		<div class="navbar_buttons_cont">
+			<ul>
+              <li class="nav-item">
+                <a class="nav-link" href="recipes.html">Меню</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="services.html">Услуги</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">О нас</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Контакты</a>
+              </li>
+            </ul>
+		</div>
+	</nav>
+
+
+	<div class="main-slider">
+		<img class="mySlides" src="slider1.png" style="width:100%">
+  	<img class="mySlides" src="slider2.jpeg" style="width:100%">
+  	<img class="mySlides" src="slider3.png" style="width:100%">
+	</div>
+
+	<div class="opacitis_cont">
+		<div class="main_offers offer1"><p>Нам важно,<br/>что вам важно!&#x1f609;</p></div>
+		<div class="main_offers offer2"><p><span style="font: 700 34px monospace;">Скоро</span><br/>в продаже - &#x1f366;</p></div>
+		<div class="main_offers offer3"><p>Попробуй наш<br/> главный напиток&#x1f60a;<img src="stakan.png"></p></div>
+	</div>
+
+	<script>
+
+var delayInMilliseconds = 5000; //1 second
+
+var isLooper = true;
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function myLoop(){
+
+setTimeout(function() {
+  plusDivs(1)
+}, delayInMilliseconds);
+}
+
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = x.length;
+  }
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  if (slideIndex == 3){
+  	document.getElementsByClassName("navka")[0].style.backgroundColor = "black";
+  } else {
+  	document.getElementsByClassName("navka")[0].style.backgroundColor = "white";
+  }
+  x[slideIndex-1].style.display = "block";  
+  myLoop();
+}
+	</script>
+</body>
+</html>
